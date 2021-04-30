@@ -41,7 +41,6 @@ const Login = () => {
 const styles = StyleSheet.create({
   
     input: {
-     
       height: 2,
       margin: 12,
       borderWidth: 1,
