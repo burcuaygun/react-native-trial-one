@@ -12,18 +12,36 @@ import {
   DebugInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+// rotalama
+import {
+  Scene,
+  Router,
+  Actions,
+  ActionConst,
+  Overlay,
+  Tabs,
+  Modal,
+  Drawer,
+  Stack,
+  Lightbox,
+} from 'react-native-router-flux';
+
 // import page and component
 // tek nokta aynı klasör içinde oldugunu söyler.
 // çift nokta klasörden cık anlamına gelir.
 import Login from './src/screens/login';
-
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Login />
-    </View>
-  );
-};
+import Home from './src/screens/home';
+import Register from './src/screens/register';
+const App = () => (
+  <Router>
+    <Stack key="root">
+      <Scene key="home" component={Register} title="Home" hideNavBar={true} />
+      <Scene key="login" component={Home} title="Login" hideNavBar={true} />
+      <Scene key="register" component={Login} title="Register" hideNavBar={true} />
+    </Stack>
+  </Router>
+);
+;
 
 const styles = StyleSheet.create({
   container: {
